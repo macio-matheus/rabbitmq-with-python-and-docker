@@ -1,0 +1,32 @@
+version: '2'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - 15672:15672
+      - 5672:5672
+    volumes:
+    #  - ./storage/rabbitmq:/var/lib/rabbitmq
+      - ./storage/enabled_plugins:/etc/rabbitmq/enabled_plugins
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: app_python
+    hostname: app_python
+    command: "tail -f /dev/null"
+    environment:
+      USER: "admin"
+      PASSWORD: "admin"
+      RABBITMQ_VHOST: "/"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - rabbitmq
