@@ -1,8 +1,8 @@
 ### Basic example of Python application with RabbitMQ and docker compose
 
-####Usage
+#### Usage
 
-#####Run with docker compose
+##### Run with docker compose
 
 ```sh
 > cd rabbitmq-with-python-and-docker
