@@ -2,7 +2,7 @@ language: python
 python:
   - 3.6
 install:
-  - pip install -q -r requirements-dev.txt codeco
+  - pip install -q -r app/requirements-dev.txt codeco
 script:
   - flake8
 after_success:
