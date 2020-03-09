@@ -3,6 +3,6 @@ python:
   - 3.6
 script:
   - flake8
-  - pytest rebirth --cov=rebirth
+  - pytest app --cov=app
 after_success:
   - codecov
