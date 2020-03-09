@@ -1,5 +1,7 @@
 ### Basic example of Python application with RabbitMQ and docker compose
 
+<img alt="mnist" src="https://api.travis-ci.org/macio-matheus/rabbitmq-with-python-and-docker.svg" data-canonical-src="https://api.travis-ci.org/macio-matheus/rabbitmq-with-python-and-docker.svg" />
+
 #### Usage
 
 ##### Run with docker compose
